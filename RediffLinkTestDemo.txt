@@ -1,0 +1,19 @@
+package SeleniumCode;
+ 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RediffLinktestDemo {
+	public static void main(String[] args) {
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.rediff.com/");
+		driver.manage().window().maximize();
+		WebElement lnktext = driver.findElement(By.linkText("Bill Payments"));
+		lnktext.click();
+		WebElement prtialtext = driver.findElement(By.partialLinkText("Bill"));
+		prtialtext.click();
+	}
+
+}
