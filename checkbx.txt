@@ -1,0 +1,26 @@
+package SeleniumCode;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Checkboxdemo {
+	public static void main(String[] args) {
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+		driver.manage().window().maximize();
+		
+		WebElement radiobtn=driver.findElement(By.xpath("//*[@id=\"radio-btn-example\"]/fieldset/label[1]/input"));
+		radiobtn.click();
+		
+		WebElement checkbx1=driver.findElement(By.xpath("//*[@id=\"checkBoxOption1\"]"));
+		checkbx1.click();
+		
+		WebElement checkbx2=driver.findElement(By.xpath("//*[@id=\"checkBoxOption2\"]"));
+		checkbx2.click();
+		
+		
+		
+	}
+
+}
