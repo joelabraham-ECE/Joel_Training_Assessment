@@ -1,0 +1,38 @@
+package SeleniumCode;
+
+import java.util.Scanner;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+public class openwebsiteTest {
+	@Test
+  public void f() {
+	  Scanner sc=new Scanner(System.in);
+	  System.out.print("Enter the browser : ");
+	  String browser=sc.nextLine();
+	  WebDriver driver = null;
+	  if(browser.equalsIgnoreCase("Chrome")) {
+		  driver =new ChromeDriver();
+	  }
+	  else if(browser.equalsIgnoreCase("Edge")) {
+		  driver=new EdgeDriver();
+	  }
+	  else if(browser.equalsIgnoreCase("firefox")) {
+		  driver=new FirefoxDriver();
+	  }
+	  else {
+		  System.out.println("Invalid Browser");
+	  }
+	  driver.get("https://open.spotify.com/");
+	  driver.manage().window().maximize();
+	  System.out.println("Title of the page is: " + driver.getTitle());
+	  driver.quit();
+	  
+	  
+	 
+  }
+}
