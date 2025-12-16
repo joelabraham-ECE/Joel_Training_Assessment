@@ -1,0 +1,27 @@
+package SeleniumCode;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class SelectNthPrdtTest {
+  @Test
+  public void f() {
+	  WebDriver driver = new ChromeDriver();
+	  driver.manage().window().maximize();
+	  driver.get("https://www.flipkart.com/");
+	  driver.findElement(By.name("q")).sendKeys("Laptops");
+	  driver.findElement(By.className("_2iLD__")).click();
+	  List<WebElement> products = driver.findElements(By.className("_4rR01T"));
+
+      // Print Nth product (example N = 3)
+      int n = 3;
+
+      System.out.println("Total products: " + products.size());
+      System.out.println("Nth Product (" + n + "): " + products.get(n - 1).getText());
+  }
+}
